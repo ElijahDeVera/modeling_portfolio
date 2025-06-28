@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elijah De Vera - Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .stats {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .photo-slot {
+            aspect-ratio: 3/4;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .photo-slot:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Properties for sharper images */
+            image-rendering: high-quality;
+            image-rendering: -webkit-optimize-contrast;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .photo-slot:hover img {
+            filter: brightness(1.05) contrast(1.02);
+        }
+
+        /* Alternative hover effect without scaling */
+        .photo-slot::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0);
+            transition: background 0.3s ease;
+            pointer-events: none;
+        }
+
+        .photo-slot:hover::after {
+            background: rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .stats {
+                font-size: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">ELIJAH DE VERA</h1>
+            <div class="stats">
+                Height 6'1" | Chest 34 | Waist 31 | Hips 34 | Shoes 11
+            </div>
+        </header>
+
+        <div class="gallery">
+            <div class="photo-slot">
+                <img src="images/prince.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/olive.jpg" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/dylan.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/bryan.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/zach.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/prince2.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/rcc.jpg" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/wnba.JPG" alt="Elijah De Vera">
+            </div>
+            <div class="photo-slot">
+                <img src="images/josh.JPG" alt="Elijah De Vera">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
